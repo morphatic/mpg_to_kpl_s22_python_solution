@@ -4,8 +4,14 @@ one set of units to another.
 """
 
 
-def mpg2kpl(mpg):
+# useful constants
+KPM = 1.609344  # kilometers per mile
+GPL = 0.2641720524  # gallons per liter
+
+
+def mpg2kpl(mpg, precision=4):
     """
-    Converts MPG to KPL
+    Converts MPG to KPL precisely to the specified
+    number decimal places (defaults to 4)
     """
-    return 10.6285926874
+    return round(mpg * KPM * GPL, precision)
